@@ -1,168 +1,209 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Leonardo Coelho Advocacia</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		body {
-			background-color: #f2f2f2;
-			font-family: Arial, sans-serif;
-			margin: 0;
-		}
-		header {
-			background-color: #212121;
-			color: #f2f2f2;
-			padding: 10px;
-			text-align: center;
-			font-size: 36px;
-			font-weight: bold;
-			animation: fadein 2s;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-            z-index: 100;
-		}
-        header h1 {
-            margin: 0;
+  <head>
+    <title>Leonardo Coelho Advocacia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background-color: #f2f2f2;
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+      header {
+        background-color: #212121;
+        color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        animation: fadein 2s;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #444;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 50px auto;
+        max-width: 1000px;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        overflow: hidden;
+        width: 300px;
+        height: 300px;
+        transition: transform 0.3s;
+        text-align: center;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .card h2 {
+        color: #212121;
+        font-size: 24px;
+        margin-top: 10px;
+      }
+      .card p {
+        color: #777;
+        font-size: 16px;
+        margin: 10px;
+        text-align: justify;
+      }
+
+      .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: #25d366;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      .whatsapp-button:hover {
+        background-color: #128c7e;
+      }
+
+      @media screen and (max-width: 768px) {
+        .card {
+          width: 90%;
+          height: auto;
+        }
+
+        @media (max-width: 768px) {
+          header h1 {
             font-size: 24px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #444;
-        }
-       
-		@keyframes fadein {
-			from { opacity: 0; }
-			to { opacity: 1; }
-		}
-		.container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			margin: 50px auto;
-			max-width: 1000px;
-		}
-		.card {
-			background-color: #fff;
-			border-radius: 10px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-			display: flex;
-			flex-direction: column;
-			margin: 10px;
-			overflow: hidden;
-			width: 300px;
-			height: 300px;
-			transition: transform 0.3s;
-			text-align: center;
-		}
-		.card:hover {
-			transform: translateY(-5px);
-		}
-		.card img {
-			height: 200px;
-			object-fit: cover;
-		}
-		.card h2 {
-			color: #212121;
-			font-size: 24px;
-			margin-top: 10px;
-		}
-		.card p {
-			color: #777;
-			font-size: 16px;
-			margin: 10px;
-			text-align: justify;
-		}
-
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 10px;
-            background-color: #25d366;
-            color: #fff;
-            font-size: 16px;
-            text-decoration: none;
-            border-radius: 5px;
+          }
         }
 
-.whatsapp-button:hover {
-  background-color: #128c7e;
-}
-
-		@media screen and (max-width: 768px) {
-			.card {
-				width: 90%;
-				height: auto;
-			}
-        
-            @media (max-width: 768px) {
-  header h1 {
-    font-size: 24px;
-  }
-}
-
-/*Esse código define o estilo do elemento header, que deve conter o título da página. O position: fixed e top: 0 mantêm o elemento fixo no topo da tela, enquanto o left: 0 e width: 100% fazem com que o elemento ocupe toda a largura da tela. O background-color e color definem as cores de fundo e de texto do elemento, respectivamente. O padding define o espaçamento interno do elemento, o text-align centraliza o conteúdo do elemento e o box-shadow adiciona uma sombra ao elemento. O z-index define a ordem de empilhamento do elemento, garantindo que ele fique sobre os demais elementos da página.
+        /*Esse código define o estilo do elemento header, que deve conter o título da página. O position: fixed e top: 0 mantêm o elemento fixo no topo da tela, enquanto o left: 0 e width: 100% fazem com que o elemento ocupe toda a largura da tela. O background-color e color definem as cores de fundo e de texto do elemento, respectivamente. O padding define o espaçamento interno do elemento, o text-align centraliza o conteúdo do elemento e o box-shadow adiciona uma sombra ao elemento. O z-index define a ordem de empilhamento do elemento, garantindo que ele fique sobre os demais elementos da página.
 
 O seletor header h1 define o estilo do título dentro do elemento header. O margin: 0 remove o espaçamento padrão ao redor do título, e o font-size define o tamanho da fonte.
 
 Por fim, o trecho @media (max-width: 768px) define um conjunto de regras que serão aplicadas apenas em telas com largura máxima de 768 pixels, ou seja, telas menores, como de dispositivos móveis. Nesse caso, o tamanho da fonte do título é reduzido para garantir que ele caiba na tela.
 */
-		}
-	</style>
-</head>
-<body>
-	<header>
-		Leonardo Coelho Advocacia
-	</header>
-	<div class="container">
-		<div class="card">
-			<a href="http://portal.rjo.virtua.com.br/sgat/escritorio.php" target="_blank"><img src="./imagens/claro-sgat.png" alt=""></a>
-			<h2>COD: 16521-628</h2>			
-		</div>
-		<div class="card">
-			<a href="https://drive.google.com/drive/folders/1LjpjHVebyeNRSqwj4GwAms6VEWKWvtZ7?usp=sharing" target="_blank"><img src="./imagens/drive.png" alt=""></a>
-			<h2>DRIVE</h2>			
-		</div>
-		<div class="card">
-			<a href="https://lazam.pottencial.com.br/Login?q=ZCWV7CF2ox8xpyMmZAQ6yi8mdUxeqfTj" target="_blank"><img src="./imagens/pottencial.png" alt=""></a>
-			<h2>POTTENCIAL</h2>			
-		</div>
-		<div class="card">
-			<a href="https://docs.google.com/spreadsheets/d/1D02BemssF1b89zzqYLpC2bAZKCQdgI7d/edit#gid=1412903988" target="_blank"><img src="./imagens/prazos.jpeg" alt=""></a>
-			<h2>PRAZOS</h2>			
-		</div>
-		<div class="card">
-			<a href="https://docs.google.com/spreadsheets/d/1zu8wbUSauB-OF99bH0JIfszH8fKBv_sFzK0y9xEDU0Q/edit#gid=266863020" target="_blank"><img src="./imagens/audiencias.jpg" alt=""></a>
-			<h2>AUDIÊNCIAS</h2>			
-		</div>
-		<div class="card">
-			<a href="https://www.automationcloud.ibm.com/auth/index.jsp" target="_blank"><img src="./imagens/subsidios.png" alt=""></a>
-			<h2>COD ACESSO SUB</h2>			
-		</div>
-		<div class="card">
-			<a href="https://webebt01.embratel.com.br/embratelonline/" target="_blank"><img src="./imagens/embratel.jpg" alt=""></a>
-			<h2>EBTJURIS</h2>
-		</div>
-		<div class="card">
-			<a href="https://docs.google.com/spreadsheets/d/1ODlgoGiy42q_-j_1fi_iKmEgodqdGq3dMVo0l9-BQ5w/edit" target="_blank"><img src="/imagens/contratos.png" alt=""></a>
-			<h2>CONTRATOS 3º</h2>
-		</div>
-        <div class="card">
-			<a href="https://insights.datalawyer.com.br/login/auth" target="_blank"><img src="./imagens/datalawyer.jpg" alt=""></a>
-			<h2>DATALAWYER</h2>
-		</div>
-        <div class="card">
-			<a href="https://iw.claro.com.br/v2/login" target="_blank"><img src="./imagens/iw.png" alt=""></a>
-			<h2>IW</h2>
-		</div>
-	</div>
+      }
+    </style>
+  </head>
+  <body>
+    <header>Leonardo Coelho Advocacia</header>
+    <div class="container">
+      <div class="card">
+        <a
+          href="http://portal.rjo.virtua.com.br/sgat/escritorio.php"
+          target="_blank"
+          ><img src="./imagens/claro-sgat.png" alt=""
+        /></a>
+        <h2>COD: 16521-628</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://drive.google.com/drive/folders/1LjpjHVebyeNRSqwj4GwAms6VEWKWvtZ7?usp=sharing"
+          target="_blank"
+          ><img src="./imagens/drive.png" alt=""
+        /></a>
+        <h2>DRIVE</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://lazam.pottencial.com.br/Login?q=ZCWV7CF2ox8xpyMmZAQ6yi8mdUxeqfTj"
+          target="_blank"
+          ><img src="./imagens/pottencial.png" alt=""
+        /></a>
+        <h2>POTTENCIAL</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://docs.google.com/spreadsheets/d/1D02BemssF1b89zzqYLpC2bAZKCQdgI7d/edit#gid=1412903988"
+          target="_blank"
+          ><img src="./imagens/prazos.jpeg" alt=""
+        /></a>
+        <h2>PRAZOS</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://docs.google.com/spreadsheets/d/1zu8wbUSauB-OF99bH0JIfszH8fKBv_sFzK0y9xEDU0Q/edit#gid=266863020"
+          target="_blank"
+          ><img src="./imagens/audiencias.jpg" alt=""
+        /></a>
+        <h2>AUDIÊNCIAS</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://www.automationcloud.ibm.com/auth/index.jsp"
+          target="_blank"
+          ><img src="./imagens/subsidios.png" alt=""
+        /></a>
+        <h2>COD ACESSO SUB</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://webebt01.embratel.com.br/embratelonline/"
+          target="_blank"
+          ><img src="./imagens/embratel.jpg" alt=""
+        /></a>
+        <h2>EBTJURIS</h2>
+      </div>
+      <div class="card">
+        <a
+          href="https://docs.google.com/spreadsheets/d/1ODlgoGiy42q_-j_1fi_iKmEgodqdGq3dMVo0l9-BQ5w/edit"
+          target="_blank"
+          ><img src="/imagens/contratos.png" alt=""
+        /></a>
+        <h2>CONTRATOS 3º</h2>
+      </div>
+      <div class="card">
+        <a href="https://insights.datalawyer.com.br/login/auth" target="_blank"
+          ><img src="./imagens/datalawyer.jpg" alt=""
+        /></a>
+        <h2>DATALAWYER</h2>
+      </div>
+      <div class="card">
+        <a href="https://iw.claro.com.br/v2/login" target="_blank"
+          ><img src="./imagens/iw.png" alt=""
+        /></a>
+        <h2>IW</h2>
+      </div>
+    </div>
 
-    <a href="https://wa.me/558199762386" target="_blank" class="whatsapp-button">
-        <i class="fa fa-whatsapp"></i>  Secretaria
-      </a>
-      
-</body>
+    <a
+      href="https://wa.me/558199762386"
+      target="_blank"
+      class="whatsapp-button"
+    >
+      <i class="fa fa-whatsapp"></i> Secretaria
+    </a>
+  </body>
 </html>
