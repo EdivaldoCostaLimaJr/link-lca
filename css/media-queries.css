@@ -1,0 +1,12 @@
+
+@media screen and (max-width: 768px) {
+    .card {
+      width: 90%;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 24px;
+      }
+    }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leonardo Coelho Advocacia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css"> 
+
+    <style>
+      iframe {
+        float: right;
+        width: 100%;
+      }
+    </style>
+  
+  </head>
+  <body>
+    <header>Leonardo Coelho Advocacia</header>
+
+    <button id="menu-toggle"><svg xmlns="http://www.w3.org/2000/svg" margin-left="30" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+    </svg></i></button>
+
+    <nav class="menu">
+      <a  href="./paginas/claropaas.html">Claro PaaS</a> 
+      <a  href="./paginas/subsidios.html">Subsídios</a>
+      <a  href="./paginas/apolices.html">Apolices</a>
+      <a  href="./paginas/guias.html">Guias</a>
+      <a  href="./paginas/prazos.html">Prazos</a>
+      <a  href="./paginas/audiencias.html">Audiências</a>
+      <a  href="./paginas/nuvem-drive.html">Nuvem</a>
+      <a  href="#">PJe</a>
+      <button class="logout-button" onclick="logout()">Sair</button>
+    </nav>
+
+    
+    <div>
+      <iframe src="https://www.pje.jus.br/navegador/" height="710px"></iframe>
+    </div>
+    
+    
+    <div id="container-index" class="container">
+     
+     
+    <a
+      href="https://wa.me/558199762386"
+      target="_blank"
+      class="whatsapp-button"
+    >
+      <i class="fa fa-whatsapp"></i> Secretaria
+    </a>
+
+    <script src="./java-script/menu-hamburguer.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.9.1/firebase-auth-compat.js"></script>
+    
+    <script>
+      const firebaseConfig = {
+    apiKey: "AIzaSyBvL8IHpJj1g76-BR2oFoO0XQj8hiWZUAk",
+    authDomain: "autenticacao-lca.firebaseapp.com",
+    projectId: "autenticacao-lca",
+    storageBucket: "autenticacao-lca.appspot.com",
+    messagingSenderId: "126264694149",
+    appId: "1:126264694149:web:2caeef369e5e0eb8b420ec",
+    measurementId: "G-1YKLHNBF0C"
+};  
+
+      firebase.initializeApp(firebaseConfig);
+
+      const validateLogin = () => {
+        const email = document.getElementsByName('email')[0].value;
+        const password = document.getElementsByName('password')[0].value;
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+          .then(() => {
+            window.location.href = 'home.html';
+          })
+          .catch((error) => {
+            alert('Usuários Inválidos');
+          });
+      };
+
+      const loginButton = document.getElementById('login-button');
+      loginButton.addEventListener('click', validateLogin);
+
+    </script>
+
+    
+
+  </body>
+</html>
